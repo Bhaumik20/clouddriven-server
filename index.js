@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/Clouddriven', { useNewUrlParser: true,useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://bhaumik:bhaumik1@cluster0-kiy8z.mongodb.net/clouddriven?retryWrites=true&w=majority', 
+{ useNewUrlParser: true,useUnifiedTopology:true});
 var db = mongoose.connection;
 
 // Added check for DB connection
