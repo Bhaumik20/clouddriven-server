@@ -15,8 +15,12 @@ app.use(cors())
 app.use(bodyParser.urlencoded({
    extended: true
 }));app.use(bodyParser.json());
+var mongo_uri=process.env.MONGODB_URI;
+if(mongo_uri==null || mongo_uri==""){
+    mongo_uri='mongodb+srv://bhaumik:bhaumik1@cluster0-kiy8z.mongodb.net/clouddriven?retryWrites=true&w=majority';
+}
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb+srv://bhaumik:bhaumik1@cluster0-kiy8z.mongodb.net/clouddriven?retryWrites=true&w=majority', 
+mongoose.connect(mongo_uri, 
 { useNewUrlParser: true,useUnifiedTopology:true});
 var db = mongoose.connection;
 
