@@ -2,6 +2,7 @@
 Note = require('./noteModel');
 // Handle index actions
 exports.index = function (req, res) {
+    console.log("Notes")
     Note.get(function (err, notes) {
         if (err) {
             res.json({
@@ -68,7 +69,8 @@ exports.delete = function (req, res) {
         _id: req.params.note_id
     }, function (err, note) {
         if (err)
-            res.send(err);res.json({
+            res.send(err);
+        res.json({
             status: "success",
             message: 'Note deleted'
         });

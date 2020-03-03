@@ -17,11 +17,12 @@ app.use(bodyParser.urlencoded({
 }));app.use(bodyParser.json());
 var mongo_uri=process.env.MONGODB_URI;
 if(mongo_uri==null || mongo_uri==""){
-    mongo_uri='mongodb+srv://bhaumik:bhaumik1@cluster0-kiy8z.mongodb.net/clouddriven?retryWrites=true&w=majority';
+    //mongo_uri='mongodb+srv://bhaumik:bhaumik1@cluster0-kiy8z.mongodb.net/clouddriven?retryWrites=true&w=majority';
+    mongo_uri="mongodb://localhost/Clouddriven"
 }
 // Connect to Mongoose and set connection variable
 mongoose.connect(mongo_uri, 
-{ useNewUrlParser: true,useUnifiedTopology:true});
+{ useNewUrlParser: true,useUnifiedTopology:true})
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -33,7 +34,7 @@ else
 //Setup server port
 var port = process.env.PORT;
 if(port==null || port==""){
-    port = 8080;
+    port = 3000;
 }
 
 // Send message for default URL
