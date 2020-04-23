@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));app.use(bodyParser.json());
 var mongo_uri=process.env.MONGODB_URI;
 if(mongo_uri==null || mongo_uri==""){
-    mongo_uri='mongodb+srv://bhaumik:bhaumik1@cluster0-kiy8z.mongodb.net/clouddriven?retryWrites=true&w=majority';
+    mongo_uri='PASTE MONGO URI HERE';
     //mongo_uri="mongodb://localhost/Clouddriven"
 }
 // Connect to Mongoose and set connection variable
